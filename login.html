@@ -1,0 +1,301 @@
+<html>
+<head>
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Dependencies: -->
+    <!-- JQuery: -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!-- bootstrap css: -->
+    <link rel="stylesheet" href="tAssets/Dependencies/Bootstrap/css/bootstrap.css?v=2">
+
+    <!--bootstrap javascript: -->
+
+    <script src="tAssets/Dependencies/Bootstrap/js/bootstrap.js"></script>
+
+    <!-- boostrap validator library: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+    <!-- Google Fonts: -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Lobster|Orbitron|Raleway" rel="stylesheet">
+    <!-- CSS style sheet: -->
+    <link rel="stylesheet" href="tAssets/Styles/loginStyles.css?v=92">
+</head>
+<body>
+
+<!-- include php files: -->
+<?php
+include 'register.php';
+include 'user_login.php';
+include 'barber_login.php';
+?>
+
+
+<div class="container-fluid page-header"><!--page_header-->
+
+    <a class="pull-left" href="http://www.mancavesalisbury.com" style="color:white;"><h2>The ManCaveLLC</h2></a>
+
+
+</div><!-- ./page-header -->
+
+
+<!--I choose to create all the forms at once
+ because they are relatively light-weight elements
+ and it will decrease any loading time from changing pages-->
+
+<div class="container text-center">
+    <div id="login_form">
+        <form method="post" action="register.php">
+            <a href="#"><h5 id="to_barber" class="muted text-left">Are you a barber? login here.</h5></a>
+            <h2 class="text-center"><u>Login</u></h2>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="name" class="form-control" id="username" aria-describedby="namehelp"
+                           placeholder="Enter Username" required>
+
+                </div>
+
+                <small id="namehelp" class="form-text muted">ex. jdoe123</small>
+            </div><!-- ./ login group -->
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-question-sign"></span></span>
+                    <input type="password" class="form-control" id="password" aria-describedby="password"
+                           placeholder="Enter Password" required>
+                </div>
+                <small id="passhelp" class="form-text muted">Enter your password</small>
+            </div><!-- ./ emailFormGroup -->
+
+            <div class="form-group">
+
+                <button type="submit" value="submit" id="login_subButton" class="btn btn-primary">Sign In!</button>
+            </div> <!-- ./validation_form_group -->
+
+
+            <a href="#"><h5 id="register_link">First time visitor? Register
+                here!
+            </h5></a>
+        </form>
+    </div><!-- ./login_form -->
+
+    <div id="register_form" class="collapse"> <!-- register_form -->
+        <form method="post" action="register.php" data-toggle="validator" role="form">
+            <!--post form to register.php that handles the form -->
+
+            <h2 class="text-center"><u>Register</u><br></h2>
+            <h4 class="text-center muted">all fields with a '<label style="color:black">*</label>' must be completed
+            </h4>
+
+            <div class="form-group">
+
+                <label for="firstName">First Name<label style="color:black">*</label> :</label>
+
+
+                <input type="name" class="form-control" id="firstName" aria-describedby="fnamehelp"
+                       placeholder="First Name" name="fName" required>
+
+                <small id="fnamehelp" class="form-text muted">ex. john</small>
+            </div><!-- ./firstNameFormGroup -->
+
+            <div class="form-group">
+                <label for="lastName">Last Name<label style="color:black">*</label> :</label>
+                <input type="name" class="form-control" id="lastName" aria-describedby="lnamehelp"
+                       placeholder="Last Name" name="lName" required>
+                <small id="lnamehelp" class="form-text muted">ex. doe<br></small>
+            </div><!-- ./lastNameFormGroup -->
+
+            <div class="form-group">
+
+                <label for="email">E-Mail:<label style="color:black">*</label></label>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailhelp"
+                           placeholder="E-mail" name="email" required>
+
+                </div>
+                <small id="emailhelp" class="form-text muted">ex. jdoe123@gmail.com<br></small>
+            </div><!-- ./emailFormGroup -->
+
+
+            <h4 class="text-center">Phone Numbers: <br></h4>
+
+            <div class="form-group">
+                <label class="control-label" for="phone1" style="font-size:10px;">Primary Phone<label
+                        style="color:black">*</label> :</label><br>
+                <small id="phone1help" class="form-text muted text-center">
+                    <label style="color:black">*</label>Primary Phone must be a mobile device that
+                    <br>is capable of receiving text SMS messages<br>
+                    <ul>
+                        <li>Must be unique.</li>
+                        <li>Must be at least 10</li>
+                        <li>Must be all numeric digits (0-9)</li>
+                        <li>Cannot contain symbols(ex. $,%,^,&,*,@, etc.)</li>
+                    </ul>
+                </small>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+                    <input type="tel" class="form-control phone-input" id="phone1" aria-describedby="phone1help"
+                           placeholder="ex. 1234567890" name="phoneOne"
+                           pattern="^[_0-9]{1,}$" maxlength="10" required>
+                </div>
+                <label for="phone2" style="font-size:10px;"><br>Secondary Phone: </label><br>
+                <small id="phone2help" class="form-text muted">We'll use this to contact you when Primary phone is
+                    not
+                    available<br></small>
+                <div class="input-group">
+
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+
+
+                    <input type="text" class="form-control phone-input" id="phone2" aria-describedby="phone2help"
+                           placeholder="ex. 1234567890" name="phoneTwo"
+                           pattern="^[_A-z0-9]{1,}$" maxlength="15" >
+                    <br>
+                </div>
+
+            </div><!-- ./user_phone_information -->
+
+
+            <div class="form-group">
+                <label  for="username">Username<label style="color:black">*</label> :</label><br>
+                <small id="createnamehelp" class="form-text muted text-center">Make sure your Username is:<br>
+                    <ul>
+                        <li>Must be unique.</li>
+                        <li>Must be at least 6 characters.</li>
+                        <li>Can be any combination of Alphabetical characters (a-z, A-Z) or digitz (0-9)</li>
+                        <li>Cannot contain symbols(ex. $,%,^,&,*,@, etc.)</li>
+                    </ul>
+
+                </small>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" id="createUsername"
+                           aria-describedby="createnamehelp" placeholder="Enter Username" name="username"
+                           pattern="^[_A-z0-9]{1,}$" data-minlength="6" maxlength="15" required>
+                </div>
+                <small class="form-text muted text-center">ex. jdoe123</small>
+                <div class="message-container help-block with-errors">
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+            </div><!-- ./ usernameGroup -->
+
+            <div class="form-group"> <!--create_password -->
+                <label for="password">Create a Password<label style="color:black">*</label> :</label><br>
+                <small id="createPassHelp" class="form-text muted text-center">Make sure your password:<br>
+                    <ul>
+                        <li>Must be at least 8 characters.</li>
+                        <li>Must include at least one capital letter.</li>
+                        <li>Must include at least one digit (0-9)</li>
+                    </ul>
+                </small>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-exclamation-sign"></span></span>
+                    <input type="password" class="form-control" id="createPassword" aria-describedby="createPassHelp"
+                           placeholder="Enter Password"  data-minlength="8" maxlength="15" name="password" required>
+                </div>
+            </div><!-- ./create_password -->
+
+            <div class="form-group"><!--confirm_password -->
+                <small class="form-text muted text-center">Confirm Password:</small>
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-paperclip"></span></span>
+                    <input type="password" class="form-control" id="confirmPass" aria-describedby="createPassHelp"
+                           placeholder="Enter Password" name="password" data-match="#createPassword" required>
+                </div>
+                <br>
+
+
+            </div><!-- ./confirm_password -->
+
+            <div class="form-group">
+
+                <button type="submit" value="submit" id="create_subButton" class="btn btn-primary">Submit
+                </button>
+
+
+
+            </div> <!-- ./submitionFormGroup -->
+
+            <a href="#"><h5 id="user_link">Already registered? Log
+                in here!
+            </h5></a>
+
+
+        </form>
+
+    </div><!-- ./register_form -->
+    <div id="barber_login_form" class="collapse">
+        <form>
+
+            <h2 class="text-center">Barber Login</h2>
+
+            <div class="form-group">
+                <label for="barber_username">Barber Username:</label>
+                <input type="name" class="form-control" id="barber_username" aria-describedby="bnamehelp"
+                       placeholder="Enter Username" required>
+                <small id="bnamehelp" class="form-text muted">ex. batman123</small>
+            </div><!-- ./ login group -->
+
+            <div class="form-group">
+                <label for="barber_password">Password:</label>
+                <input type="password" class="form-control" id="barber_password" aria-describedby="bpasshelp"
+                       placeholder="Enter Password" required>
+                <small id="bpasshelp" class="form-text muted">Enter your password</small>
+            </div><!-- ./ emailFormGroup -->
+
+            <div class="form-group">
+
+                <button type="submit" value="submit" id="barber_subButton" class="btn btn-primary">Login</button>
+            </div> <!-- ./validation_form_group -->
+
+            <a href="#"><h5 id="reg_user_link">Are you a customer?
+                Login here!
+            </h5></a>
+
+        </form> <!-- ./login_form -->
+    </div><!-- ./barber_form -->
+
+</div> <!--./all_forms_container -->
+
+
+<script>
+    function redirect() {
+        var dir = $(this).attr('id');
+
+
+        $(this).parent().parent().parent().addClass("collapse");
+
+        dir = dir.toString();
+
+
+        if (dir.search("user") >= 0) {
+            $("#login_form").removeClass("collapse");
+
+        } else if (dir.search("barber") >= 0) {
+            $("#barber_login_form").removeClass("collapse");
+
+        } else if (dir.search("register") >= 0) {
+            $("#register_form").removeClass("collapse");
+
+        }
+    }
+
+
+    $("a > h5").click(redirect);
+
+
+
+
+</script>
+
+</body>
+</html>

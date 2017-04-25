@@ -1,0 +1,133 @@
+body{
+    /* background-color:#white;*/
+
+    background-image: url('/tAssets/Images/man_cave_squad_goals.png');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+input {
+
+    border-style: solid;
+    border-color:#ff6666;
+    background-color: white;
+    border-width:2px;
+    max-width:250px;
+    display: inline-block;
+    margin : 0 auto;
+    font-family: Raleway;
+}
+
+
+ul{
+    display: inline-block;
+    margin : 0 auto;
+    text-align: left;
+    list-style-type: circle;
+}
+
+.nav{
+    marign:5px;
+    padding:10px;
+}
+
+ .nav > li {
+    border-style: solid;
+    border-width:1px;
+    color:white;
+     padding:10px;
+}
+
+ .nav > li.active {
+     background: #84160a;
+ }
+
+.nav > li > a{
+color:white;
+}
+
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background: #84160a;
+    height:58px;
+}
+
+
+.page-header {
+    background: rgba(255,0,0, 0.5);
+    border-style: solid;
+    border-color:#ff6666;
+    border-width:2px;
+    color:white;
+    font-family: Bungee;
+    padding: 10px;
+    padding-left:5%;
+    padding-right:5%;
+    top: 0;
+    left: 0;
+    right:0;
+    margin-top:0px;
+    margin-bottom: 50px;
+
+
+}
+
+
+.container {
+    background: rgba(255,0,0, 0.5);
+    border-style: solid;
+    border-color:#ff6666;
+    background-color: rgba(255,0,0, 0.5);
+    border-width:2px;
+    color:white;
+    font-family: Bungee;
+
+}
+
+.input-group {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.muted {
+    color: rgb(209, 211, 214);
+}
+
+.text-danger{
+    text-color:#5b0916;
+}
+
+
+.has-error .help-block,
+.has-error .form-control-feedback {
+    background: #5b0916;
+    color: white;
+}
+
+.has-success .control-label,
+.has-success .help-block,
+.has-success .form-control-feedback {
+    color: white;
+}
+
+
+
+h5 {
+    color:#93b7f2;
+    font-size: 8px;
+}
+
+a:hover, a:hover h5 {
+    color: white;
+
+}
+
+div > .help-block{
+    max-width:200px;
+    margin: 0 auto;
+}
